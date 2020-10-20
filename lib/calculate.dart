@@ -1,3 +1,5 @@
+//https://www.codebrainer.com/blog/love-calculator-android (For algorithm used here)
+
 int calculate({String firstName, String secondName}) {
   List<String> firstList = firstName.toLowerCase().split('');
   List<String> secondList = secondName.toLowerCase().split('');
