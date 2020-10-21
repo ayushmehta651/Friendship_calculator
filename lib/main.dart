@@ -36,17 +36,20 @@ class _MyCalculatorState extends State<MyCalculator> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.purpleAccent[200],
+        shadowColor: Colors.black,
         title: Text("Friendship Calculator"),
       ),
       body: Stack(children: [
         Container(
-          child: Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: Hero(
-                tag: 'gif',
-                child:
-                    Image(height: 300.0, image: AssetImage('images/img1.gif'))),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 50, bottom: 170),
+              child: Hero(
+                  tag: 'gif',
+                  child: Image(
+                      height: 300.0, image: AssetImage('images/logo.gif'))),
+            ),
           ),
         ),
         Column(children: [
@@ -56,7 +59,9 @@ class _MyCalculatorState extends State<MyCalculator> {
                 Padding(
                   padding: EdgeInsets.fromLTRB(0.0, 348, 0.0, 0.0),
                   child: Container(
-                    color: Colors.amberAccent,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [Colors.purple[300], Colors.purple[400]])),
                     height: 150,
                     child: ClipRect(
                       child: Align(
@@ -95,12 +100,13 @@ class _MyCalculatorState extends State<MyCalculator> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(200.0, 430, 50.0, 0.0),
                   child: RaisedButton(
+                      color: Colors.tealAccent,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25.0)),
                       onPressed: loveScore,
                       child: Text(
                         'Calculate',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.blue),
                       )),
                 )
               ],
@@ -127,13 +133,15 @@ class SecondRoute extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(12.0),
           child: Hero(
-              tag: 'gif', child: Image(image: AssetImage('images/img2.gif'))),
+              tag: 'gif',
+              child:
+                  Center(child: Image(image: AssetImage('images/logo.gif')))),
         ),
         Text(
           'Your LoveScore is $score',
           style: TextStyle(
               fontWeight: FontWeight.bold,
-              color: Colors.blueGrey,
+              color: Colors.blue,
               letterSpacing: 2.0,
               fontSize: 30),
         )
